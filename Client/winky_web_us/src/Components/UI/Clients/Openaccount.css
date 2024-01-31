@@ -1,0 +1,66 @@
+@media (max-width: 540px){
+    .overall-open-account{
+        height: 100vh;
+        width: 100vw;
+        position: relative;
+    }
+    .overall-open-account img{
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    position: absolute;
+    top:0px;
+    z-index: +1;
+    }
+    .overall-form{
+    width: 70vw;
+    border-radius: 20px;
+    padding: 10px;
+    z-index: +2;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    }
+    .form-view-1,.form-view-2,.form-view-3{
+    
+    }
+    .view-1-btn,.view-2-btn,.view-3-btn{
+    width: max-content;
+    margin: auto;
+    padding: 10px;
+    }
+}
+@media (min-width: 541px){
+    .overall-open-account{
+        height: 100vh;
+        width: 100vw;
+        position: relative;
+    }
+    .overall-open-account img{
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    position: absolute;
+    top:0px;
+    z-index: +1;
+    }
+    .overall-form{
+    width: 300px;
+    border-radius: 20px;
+    padding: 10px;
+    z-index: +2;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    }
+    .form-view-1,.form-view-2,.form-view-3{
+    
+    }
+    .view-1-btn,.view-2-btn,.view-3-btn{
+    width: max-content;
+    margin: auto;
+    padding: 10px;
+    }
+}

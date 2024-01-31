@@ -1,0 +1,348 @@
+@media (max-width:540px){
+.overall-homescreen-container{
+position:relative;
+background-color: black;
+}
+.overall-header-section{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: #19132B;
+    padding: 10px;
+    position:fixed;
+    z-index: +4;
+    width: 100vw;
+}
+.menu-brand-name{
+
+}
+.menu-brand-name ul{
+display: flex;
+flex-direction: column;
+gap:5px
+}
+.login-signup{
+border-left: 3px solid #F66800;
+height: 30px;
+padding: 3px;
+margin-top: 10px;
+}
+.homescreen-introduction-section{
+position: relative;
+width: 100%;
+height: 80vh;
+
+}
+.homescreen-sidebar{
+position: fixed;
+z-index: +4;
+top:70px;
+left:10vw;
+background-color: white;
+width:80vw;
+height:80vh ;
+margin: auto;
+}
+.homescreen-sidebar-links{
+width: 40vw;
+margin: auto;
+display: flex;
+flex-direction: column;
+gap:15px;
+}
+.homescreen-sidebar-links li{
+border-bottom: 2px solid black;
+}
+.homescreen-introduction-section img{
+width: 100vw;
+z-index: +1;
+position: absolute;
+height: 80vh;
+object-fit: cover;
+}
+.homescreen-opacity-controller{
+position: absolute;
+z-index: +2;
+width: 100vw;
+height: 80vh;
+background-color: black;
+opacity: 0.5;
+}
+.homescreen-text-on-image{
+width:70vw;
+height: 200px;
+border-left: 2px solid white;
+position: absolute;
+z-index: +3;
+    top:50%; 
+    left:50%; 
+    transform:translate(-50%, -50%); 
+
+}
+.how-to-get-things-done-section{
+background-color: #0F0E0F;
+height: max-content;
+padding: 20px;
+}
+.section-head-text{
+    border-left: 3px solid white;
+width: max-content;
+height: 40px;
+margin-left: 20px;
+
+}
+.steps-to-take{
+display: flex;
+flex-direction: column;
+gap:10px;
+}
+.who-we-are-section{
+height: max-content;
+padding: 20px;
+background-color: #020E1C;
+}
+.about-us-section{
+padding: 20px;
+background-color: #020E1C;
+height: max-content;
+}
+.contact-us-section{
+height: max-content;
+padding: 20px;
+background-color: #020E1C;
+}
+}
+@media screen and (min-width:540px) and (max-width:780px){
+    .overall-homescreen-container{
+position: relative;
+    }
+    .overall-header-section{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        background-color: #19132B;
+        padding: 10px;
+        position:fixed;
+        z-index: +4;
+        width: 100vw;;
+    }
+    .menu-brand-name{
+    
+    }
+    .menu-brand-name ul{
+    display: flex;
+    flex-direction: column;
+    gap:5px
+    }
+    .login-signup{
+    border-left: 3px solid #F66800;
+    height: 30px;
+    padding: 3px;
+    margin-top: 10px;
+    }
+    .homescreen-introduction-section{
+    position: relative;
+    width: 100%;
+    height: 80vh;
+    
+    }
+    .homescreen-sidebar{
+        position: fixed;
+        z-index: +4;
+        top:70px;
+        left:10vw;
+        background-color: white;
+        width:80vw;
+        height:80vh ;
+        margin: auto;
+        }
+        .homescreen-sidebar-links{
+        width: 40vw;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        gap:15px;
+        }
+        .homescreen-sidebar-links li{
+        border-bottom: 2px solid black;
+        }
+    .homescreen-introduction-section img{
+    width: 100vw;
+    z-index: +1;
+    position: absolute;
+    height: 80vh;
+    object-fit: cover;
+    }
+    .homescreen-opacity-controller{
+    position: absolute;
+    z-index: +2;
+    width: 100vw;
+    height: 80vh;
+    background-color: black;
+    opacity: 0.5;
+    }
+    .homescreen-text-on-image{
+    width:300px;
+    height: 200px;
+    border-left: 2px solid white;
+    position: absolute;
+    z-index: +3;
+        top:50%; 
+        left:50%; 
+        transform:translate(-50%, -50%); 
+    
+    }
+    .how-to-get-things-done-section{
+    background-color: #0F0E0F;
+    height: max-content;
+    padding: 20px;
+    }
+    .section-head-text{
+        border-left: 3px solid white;
+    width: max-content;
+    height: 40px;
+    margin-left: 20px;
+    
+    }
+    .steps-to-take{
+    display: flex;
+    flex-direction: column;
+    gap:10px;
+    }
+    .who-we-are-section{
+    height: max-content;
+    padding: 20px;
+    background-color: #020E1C;
+    margin: auto;
+    }
+    .about-us-section{
+    padding: 20px;
+    background-color: #020E1C;
+    height: max-content;
+    }
+    .contact-us-section{
+    height: max-content;
+    padding: 20px;
+    background-color: #020E1C;
+    }
+}
+@media screen and (min-width:780px){
+    .overall-homescreen-container{
+position: relative;
+    }
+    .overall-header-section{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        background-color: #19132B;
+        padding: 10px;
+        position: fixed;
+        z-index: +4;
+        width: 100vw;
+    }
+    .menu-brand-name{
+    
+    }
+    .menu-brand-name ul{
+    display: flex;
+    flex-direction: column;
+    gap:5px
+    }
+    .login-signup{
+    border-left: 3px solid #F66800;
+    height: 30px;
+    padding: 3px;
+    margin-top: 10px;
+    }
+    .homescreen-introduction-section{
+    position: relative;
+    width: 100%;
+    height: 80vh;
+    
+    }
+    .homescreen-sidebar{
+        position: fixed;
+        z-index: +4;
+        top:70px;
+        left:10vw;
+        background-color: white;
+        width:80vw;
+        height:80vh ;
+        margin: auto;
+        }
+        .homescreen-sidebar-links{
+        width: 40vw;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        gap:15px;
+        }
+        .homescreen-sidebar-links li{
+        border-bottom: 2px solid black;
+        }
+    .homescreen-introduction-section img{
+    width: 100vw;
+    z-index: +1;
+    position: absolute;
+    height: 80vh;
+    object-fit: cover;
+    }
+    .homescreen-opacity-controller{
+    position: absolute;
+    z-index: +2;
+    width: 100vw;
+    height: 80vh;
+    background-color: black;
+    opacity: 0.5;
+    }
+    .homescreen-text-on-image{
+    width:400px;
+    height: 200px;
+    border-left: 2px solid white;
+    position: absolute;
+    z-index: +3;
+        top:50%; 
+        left:50%; 
+        transform:translate(-50%, -50%); 
+    
+    }
+    .how-to-get-things-done-section{
+    background-color: #0F0E0F;
+    height: max-content;
+    padding: 20px;
+    }
+    .section-head-text{
+        border-left: 3px solid white;
+    width: max-content;
+    height: 40px;
+    margin-left: 20px;
+    
+    }
+    .steps-to-take{
+    display: flex;
+    flex-direction: column;
+    gap:10px;
+    }
+    .who-we-are-section{
+    height: max-content;
+    padding: 20px;
+    background-color: #020E1C;
+    margin: auto;
+    }
+    .about-us-section{
+    padding: 20px;
+    background-color: #020E1C;
+    height: max-content;
+    }
+    .contact-us-section{
+    /* height: max-content;
+    padding: 20px; */
+    background-color: #020E1C;
+    }
+    .contact-paragraphs{
+    display: flex;
+    flex-direction: row;
+    gap:40px;
+    
+    }
+}
