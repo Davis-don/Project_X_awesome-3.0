@@ -1,4 +1,5 @@
 import React from 'react'
+import axios from 'axios';
 import { useState, useEffect } from 'react'
 import { useNavigate} from "react-router-dom"
 import './Login.css'
@@ -35,6 +36,7 @@ function Alertfailed(){
   )
 }
 export default function Login() {
+  const [token,setToken]=useState('')
   let navigate=useNavigate();
   let [success,setSuccess]=useState(false)
   let [fail,setFail]=useState(false);
@@ -59,16 +61,14 @@ export default function Login() {
    
   if(response){
    const data=await response.json();
-   if(data.message==='client'){
-    console.log('client')
-    navigate('/clientaccount')
+  
+   if(data.clientstatus==='untasked'){
+    setToken(data.token)
+    //console.log(data.token)
+    navigate('/Client/Account?param1=' + data.token);
    }
-   else if(data.message==='employee'){
-    console.log('employee')
-   }
-   else{
-     setFail(true)
-   }
+  
+  //console.log(token)
  }
 }
  catch (error) {
@@ -78,6 +78,7 @@ export default function Login() {
  }
    
 }
+
   return (
     <div className='login-overall'>
         <img className='login-img'src={loginbg}alt='dark background'/>

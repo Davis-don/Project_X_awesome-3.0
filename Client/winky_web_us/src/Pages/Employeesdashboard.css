@@ -1,0 +1,150 @@
+@media (max-width:540px){
+    .overall-client-dashboard{
+        background-color: rgb(23, 22, 22);
+        height: max-content;
+        position: relative;
+        }
+
+
+
+
+
+
+
+        .overall-dashlink-employees{
+            padding: 20px;
+            }
+            .dashlink-overall-cards-employees,.service-card{
+                background-color: black;
+                padding: 20px;
+                display: flex;
+                flex-direction: column;
+                gap:20px            
+            }
+            .dash-card-statistics{
+                background-color: black;
+                height: max-content;
+                display: flex;
+                flex-direction: column;
+                gap:20px;
+            }
+
+
+
+
+
+
+
+            /*services*/
+            .overall-Service-link-employees{
+                padding: 20px;
+                }
+                .service-card-employee{
+                    background-color: rgb(23, 22, 22);
+                    height: max-content;
+                }
+}
+@media screen and (min-width:540px) and (max-width:780px){
+    .overall-client-dashboard{
+        background-color: rgb(23, 22, 22);
+        height: max-content;
+        position: relative;
+        }
+
+
+
+
+
+
+
+        .overall-dashlink-employees{
+            padding: 20px;
+            }
+            .dashlink-overall-cards-employees,.service-card{
+                background-color: black;
+                padding: 20px;
+                display: flex;
+                flex-direction: column;
+                gap:20px            
+            }
+            .dash-card-statistics{
+                background-color: black;
+                height: max-content;
+                display: grid;
+                grid-template-columns: repeat(auto-fit,minmax(150px,1fr));
+                gap:20px;
+            }
+
+
+
+
+
+
+
+            /*services*/
+            .overall-Service-link-employees{
+                padding: 20px;
+                }
+                .service-card-employee{
+                    background-color: rgb(23, 22, 22);
+                    height: max-content;
+                }
+                .overall-services-employees-cards-holders{
+                display: grid;
+                grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
+                gap: 20px;
+                }
+
+}
+@media screen and (min-width:780px){
+    .overall-client-dashboard{
+        background-color: rgb(23, 22, 22);
+        height:max-content;
+        position: relative;
+        }
+
+
+
+
+
+
+
+        .overall-dashlink-employees{
+            padding: 20px;
+            width:70vw;
+            }
+            .dashlink-overall-cards-employees,.service-card{
+                background-color: black;
+                padding: 20px;
+                display: flex;
+                flex-direction: column;
+                gap:20px            
+            }
+            .dash-card-statistics{
+               background-color: black;
+               display: grid;
+               grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+               gap: 20px;
+            }
+
+
+
+
+
+
+
+            /*services*/
+            .overall-Service-link-employees{
+                padding: 20px;
+
+                }
+                .service-card-employee{
+                    background-color: rgb(23, 22, 22);
+                    height: max-content;
+                }
+                .overall-services-employees-cards-holders{
+                display: grid;
+                grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
+                gap: 20px;
+                }
+}

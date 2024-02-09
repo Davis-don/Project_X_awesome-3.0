@@ -103,13 +103,13 @@ background-color: #020E1C;
 }
 .about-us-section{
 padding: 20px;
-background-color: #020E1C;
+background-color: #191919;
 height: max-content;
 }
 .contact-us-section{
 height: max-content;
 padding: 20px;
-background-color: #020E1C;
+background-color: #060f1a;
 }
 }
 @media screen and (min-width:540px) and (max-width:780px){
@@ -217,13 +217,13 @@ position: relative;
     }
     .about-us-section{
     padding: 20px;
-    background-color: #020E1C;
+    background-color: #191919;
     height: max-content;
     }
     .contact-us-section{
     height: max-content;
     padding: 20px;
-    background-color: #020E1C;
+    background-color: #060f1a;
     }
 }
 @media screen and (min-width:780px){
@@ -331,13 +331,13 @@ position: relative;
     }
     .about-us-section{
     padding: 20px;
-    background-color: #020E1C;
+    background-color: #191919;
     height: max-content;
     }
     .contact-us-section{
     /* height: max-content;
     padding: 20px; */
-    background-color: #020E1C;
+    background-color: #060f1a;
     }
     .contact-paragraphs{
     display: flex;

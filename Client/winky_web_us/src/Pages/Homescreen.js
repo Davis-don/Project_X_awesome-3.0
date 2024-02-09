@@ -26,7 +26,7 @@ const [sidebar,setSidebar]=useState(false)
       <h3 style={{textAlign:'center'}}>Menu</h3>
               <ul className='list-unstyled homescreen-sidebar-links'>
          <li className='fs-5'>Services</li>
-         <li className='fs-5'>Testimonials</li>
+         <li className='fs-5'><Link to='/Testimonials'  style={{textDecoration:'none',color:'black'}}>Testimonials</Link></li>
         </ul>
       </div>}
       <img onClick={()=>setSidebar(false)} src={fibreimg} alt='image of a fibre optic'/>
