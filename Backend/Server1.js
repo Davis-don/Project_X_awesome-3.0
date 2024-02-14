@@ -16,6 +16,8 @@ const Testimony=require('./Testimonials');
   app.use('/task/registration',task)
   const login=require('./login')
    app.use('/Account/login',login)
+   const login2=require('./login2')
+   app.use('/Account/login2',login2)
    const payment=require('./Payhandle')
    app.use('/handle/pay',payment)
    const hire=require('./Hire');

@@ -1,4 +1,4 @@
-POST http://localhost:4000/Account/login
+POST http://localhost:4000/Account/login2
 Content-Type: application/json
 
 {
@@ -6,7 +6,7 @@ Content-Type: application/json
     "password":"As261/1163/2020"
 }
 ###
-GET http://localhost:4000/Account/login
-Authorization:bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIsImlhdCI6MTcwNzE2MjU3NX0.ypGqPKuqndevfoftN2xc3uSzmZH5iMPvb2IKvY4A4Oc
+GET http://localhost:4000/Account/login2
+Authorization:bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdGF0dXMiOiJ1bnRhc2tlZCIsImlkIjoyLCJpYXQiOjE3MDc2NDI3Mzd9.tiKtq3o6HoYPfS_YR0WsJzVAsGbpE6Nwo9O-J8133Xw
 
 

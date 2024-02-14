@@ -8,13 +8,14 @@ pool.getConnection((error,connection)=>{
  //do your executions here
    // Twilio credentials
 const accountSid = 'AC1309674dcdb4f7fc91628c1e88b9bb7c';
-const authToken = 'd531741efdd49c42471863b64ce7af98';
+const authToken = '0fd9cef8b46b3bcd0eb964bbc8e41183';
 const twilioPhoneNumber = '+17184739974';
 
 const client = new twilio(accountSid, authToken);
 // Endpoint to send an SMS
     routes.post('/',(req,res)=>{
         const {ClientID,namePhoneno,Amount}=req.body
+        console.log(req.body)
         to ="+254 758 420860"
        const message='Please confirm the payment of clientID:' + ClientID + ",Namecontact:" + namePhoneno + " " +  "of KES" + Amount
        //const message='heloooooo'
@@ -29,6 +30,7 @@ const client = new twilio(accountSid, authToken);
           console.log('message sent');
         })
         .catch((error) => {
+          res.status(400).json({message:'failed'})
           console.error('not sent');
         });
 

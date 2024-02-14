@@ -1,4 +1,4 @@
-# winky_web_us v 1.0
+# winky_web_u
 
 ![Build Badge](https://img.shields.io/badge/Build%20Status-red)
 
@@ -11,7 +11,7 @@ with developers.
 
 ## Table of Contents
 
-- [winky\_web\_us v 1.0](#winky_web_us-v-10)
+- [winky\_web\_u](#winky_web_u)
   - [Overview](#overview)
   - [Table of Contents](#table-of-contents)
   - [Features](#features)

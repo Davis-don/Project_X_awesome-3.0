@@ -36,7 +36,9 @@ function Alertfailed(){
   )
 }
 export default function Login() {
-  const [token,setToken]=useState('')
+  const [tokendata,setTokendata]=useState({})
+
+
   let navigate=useNavigate();
   let [success,setSuccess]=useState(false)
   let [fail,setFail]=useState(false);
@@ -51,7 +53,7 @@ export default function Login() {
  let handlelogin=async (e)=>{ 
   e.preventDefault();
  try{
-  const response=await fetch("http://localhost:4000/Account/login",{
+  const response=await fetch("http://localhost:4000/Account/login2",{
    method:'post',
    headers:{
      'content-type':'application/json'
@@ -61,23 +63,30 @@ export default function Login() {
    
   if(response){
    const data=await response.json();
-  
-   if(data.clientstatus==='untasked'){
-    setToken(data.token)
+    // After receiving the token from the server
     //console.log(data.token)
-    navigate('/Client/Account?param1=' + data.token);
-   }
-  
-  //console.log(token)
- }
+localStorage.setItem('tokeninfo',data.token);
+const token = localStorage.getItem('tokeninfo');
+console.log(data)
+if(data.userStatus==='client'){
+  navigate(`/Client/Account?data=${token}`)
 }
+else if(data.userStatus==='employee'){
+  navigate(`/Employee/login?data=${token}`) 
+}
+else{
+  setFail(true)
+  setSuccess(false)
+}
+}
+ }
  catch (error) {
    console.log(error)
    setFail(true)
  
  }
-   
 }
+
 
   return (
     <div className='login-overall'>

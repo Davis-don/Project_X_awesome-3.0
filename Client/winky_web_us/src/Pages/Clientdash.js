@@ -14,38 +14,43 @@ import './clientdash.css'
 
 export default function Clientdash() {
   const [userCred,setUsercred]=useState({})
-  const [token,setToken]=useState('')
+  const [token,setToken]=useState(false)
   const location = useLocation();
   const queryParams = new URLSearchParams(location.search);
-  useEffect(() => {
-    const param1 = queryParams.get('param1');
-    setToken(param1)
-    
-    const fetchData = async () => {
-      try {
-  //console.log(typeof token)
-        const response = await axios.get('http://localhost:4000/Account/login', {
-          headers: {
-            'Authorization': `Bearer ${token}`,
-            // Other headers if needed
-          },
-        });
-    
-        // Handle the response data
-        //console.log(response.data);
-        setUsercred(response.data)
-        setLoading(false)
-      } catch (error) {
-        // Handle errors
-        console.error('Error:', error);
+  const tokenPassed = queryParams.get('data');
+//axios fetch
+useEffect(() =>{
+  if(tokenPassed===null){
+    navigate('/Login')
       }
-    };
-    
-    fetchData();
+  const fetchData = async () => {
+    try {
+      const response = await axios.get('http://localhost:4000/Account/login2',{
+        headers: {
+                     'Authorization': `Bearer ${tokenPassed}`,
+                   },
+      });
+      // Assuming the API returns an object with user data
+      if(response.data.task==='untasked'){
+        setTask(false)
+        setUsercred(response.data.result);
+        setLoading(false)
+      }
+      else if(response.data.task==='tasked'){
+        setTask(true)
+        setUsercred(response.data.result);
+        setLoading(false)
+      }
+      
+    } catch (error) {
+      console.error('Error fetching data:', error);
+      setLoading(false);
+    }
+  };
 
-    //Use param1 and param2 as needed  
-  }),[queryParams];
-  //[queryParams]
+  fetchData();
+}, []);
+
     const navigate = useNavigate();
     const [sidebar,setSidebar]=useState(false)
     const [task,setTask]=useState(false)
@@ -63,49 +68,19 @@ export default function Clientdash() {
     else if(message===true){
         component=<Messageslink/>
     }
-    //axios fetch
-// useEffect(() => {
-//     const fetchData = async () => {
-//       try {
-//         console.log(token)
-//         const response = await axios.get('http://localhost:4000/Account/login',{
-//           headers:{
-//             Authorization:token
-//           }
-//         });
-//         // Assuming the API returns an object with user data
-//         //setUsercred(response.data);
-//         setLoading(false)
-//         //if(response.data.clientstatus==='untasked'){
-//    //setTask(false)
-//        // }
-//        // else{
-//    //setTask(true)
-//        // }
-        
-//       } catch (error) {
-//         console.error('Error fetching data:', error);
-//         setLoading(false);
-//       }
-//     };
-  
-//     fetchData();
-//   }, []);
-  
-  //console.log(userCred.clientdata.Status)
     function Dashlink(){
         let message;
         useEffect(()=>{
-            if((userCred.clientdata.Status==="Pending...") && userCred.clientdata.paid_Amount<1/2 * userCred.clientdata.Total_price_Amount ){
-                message="Pay atleast KES " + " " + 1/2 * userCred.clientdata.Total_price_Amount 
+            if((userCred.Status==="Pending...") && userCred.paid_Amount<1/2 * userCred.Total_price_Amount ){
+                message="Pay atleast KES " + " " + 1/2 * userCred.Total_price_Amount 
             }
         },[])
 
         function Testify() {
             const [commentinfo,setCommentinfo]=useState({
-                firstName:userCred.clientdata.firstName,
-                lastName:userCred.clientdata.lastName,
-                ClientId:userCred.clientdata.Client_ID,
+                firstName:userCred.firstName,
+                lastName:userCred.lastName,
+                ClientId:userCred.Client_ID,
                 workState:'',
                 comment:''
             })
@@ -220,7 +195,7 @@ export default function Clientdash() {
               const [fail,setFail]=useState(false)
               const [wait,setWait]=useState(false)
               const [pay,setPay]=useState({
-                ClientID:userCred.clientdata.Client_ID,
+                ClientID:userCred.Client_ID,
                 namePhoneno:'',
                 Amount:''
               })
@@ -294,7 +269,7 @@ export default function Clientdash() {
                 return(
               <div className='overall-alert'>
               <div class="alert alert-danger alert-dismissible fade show">
-                  <strong>warning!</strong>Something is not right
+                  <strong>warning!</strong>Something is not right.Please contact 0758420860
                 </div>
               </div>
                 )
@@ -333,7 +308,7 @@ export default function Clientdash() {
 <div className='dashlink-overall-cards'>
 <div className='welcome-dash-text card dash-card'>
     <p className='container-fluid text-light'>
-        Welcome back <span className='fs-3' style={{color:'rgb(244, 128, 12)'}}>{userCred.clientdata.firstName + " " + userCred.clientdata.lastName}</span>.Thankyou for choosing <span className='text-warning'>Winky_web_us</span>.It is such a privilege to work with you.And please makesure to leave a testimonial as we help each other grow.
+        Welcome back <span className='fs-3' style={{color:'rgb(244, 128, 12)'}}>{userCred.firstName + " " + userCred.lastName}</span>.Thankyou for choosing <span className='text-warning'>Winky_web_us</span>.It is such a privilege to work with you.And please makesure to leave a testimonial as we help each other grow.
     </p>
 </div>
 { !task &&
@@ -346,13 +321,13 @@ You have not registered any task.Please register in the service tab.
 { task &&
 <div className='tasked-task-section-card card dash-card'>
 <h2 className='text-primary' style={{textAlign:'center'}}>Task Analysis</h2>
-<h5 style={{textAlign:'center'}} className='text-light'>Your task status is:<br/> <span className='text-warning'>{userCred.clientdata.Status}</span></h5>
+<h5 style={{textAlign:'center'}} className='text-light'>Your task status is:<br/> <span className='text-warning'>{userCred.Status}</span></h5>
 </div>
     }
     { task && 
 <div className='tasked-financial-section-card card dash-card'>
 <h2 className='text-info' style={{textAlign:'center'}}>Financial Analysis</h2>
-<h5 style={{textAlign:'center'}} className='text-light'>Your balance is:<br/> <sup >KES</sup> <span className='text-warning fs-3'>{userCred.clientdata.Total_price_Amount - userCred.clientdata.paid_Amount}</span></h5>
+<h5 style={{textAlign:'center'}} className='text-light'>Your balance is:<br/> <sup >KES</sup> <span className='text-warning fs-3'>{userCred.Total_price_Amount - userCred.paid_Amount}</span></h5>
 </div>
     }
     {
@@ -368,12 +343,24 @@ You have not registered any task.Please register in the service tab.
             </div>
         )
     }
+
+
+
+
+
+
+
+
+
+
+
+
 function  Servicelink(){
     let [success,setSuccess]=useState(false)
     let [exist,setExist]=useState(false)
     let [fail,setFail]=useState(false)
     let [tasking,setTasking]=useState({
-      ClientId:userCred.clientdata.Client_ID,
+      ClientId:userCred.Client_ID,
       ServiceId:'',
       MainGoal:'',
       Description:'',
